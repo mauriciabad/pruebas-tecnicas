@@ -1,6 +1,14 @@
 
 import { useLocalStorage } from '@vueuse/core'
 import type { BookISBN } from '../books/types'
+import { useBroadcastChannel } from '@vueuse/core'
+import { watch } from 'vue'
+
+const {
+  data,
+  post,
+} = useBroadcastChannel<Set<BookISBN>, Set<BookISBN>>({ name: 'reading-lista' })
+watch(data, () => { post(data.value) })
 
 const readingList = useLocalStorage<Set<BookISBN>>('reading-list-books', new Set())
 
