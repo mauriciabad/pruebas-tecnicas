@@ -22,7 +22,7 @@ const inReadingList = computed<boolean>(() => readingList.value.has(props.book.I
         class="w-full block aspect-[9/14] object-cover rounded-md shadow-lg"
       />
       <div
-        class="absolute group-hover:opacity-100 focus-within:opacity-100 opacity-0 flex text-white group-focus-visible:block inset-0 flex-col justify-center items-center"
+        class="absolute group-hover:opacity-100 [&:has(:focus-visible)]:opacity-100 opacity-0 flex text-white group-focus-visible:block inset-0 flex-col justify-center items-center"
       >
         <button
           @click="toggleReadingListBook(book.ISBN)"
