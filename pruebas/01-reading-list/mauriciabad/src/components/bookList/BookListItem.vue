@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { Book, BookISBN } from '@/services/books/types'
+import type { Book } from '@/services/books/types'
 import useReadingList from '@/services/readingList/useReadingList'
 import BookmarkIcon from './BookmarkIcon.vue'
 import { computed } from 'vue'
@@ -7,6 +7,7 @@ import { IconBookmark, IconBookmarkOff } from '@tabler/icons-vue'
 
 const props = defineProps<{
   book: Book
+  hideBookmark?: boolean
 }>()
 
 const { readingList, toggleReadingListBook } = useReadingList()
@@ -46,6 +47,6 @@ const inReadingList = computed<boolean>(() => readingList.value.has(props.book.I
         {{ book.title }}
       </span>
     </div>
-    <BookmarkIcon v-if="inReadingList" class="absolute right-4 -top-1 z-10" />
+    <BookmarkIcon v-if="!hideBookmark && inReadingList" class="absolute right-4 -top-1 z-10" />
   </li>
 </template>

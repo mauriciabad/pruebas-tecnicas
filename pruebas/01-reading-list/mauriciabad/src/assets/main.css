@@ -5,7 +5,3 @@
 body {
   background: #ffffff url(./textures/moroccan-flower.png) repeat top left;
 }
-
-html {
-  scrollbar-gutter: stable;
-}

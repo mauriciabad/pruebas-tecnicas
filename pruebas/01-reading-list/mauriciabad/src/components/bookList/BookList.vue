@@ -4,11 +4,17 @@ import BookListItem from './BookListItem.vue'
 
 defineProps<{
   books: Book[]
+  hideBookmarks?: boolean
 }>()
 </script>
 
 <template>
   <ul class="grid grid-cols-[repeat(auto-fill,minmax(11rem,1fr))] gap-6">
-    <BookListItem v-for="book in books" :key="book.ISBN" :book="book" />
+    <BookListItem
+      v-for="book in books"
+      :key="book.ISBN"
+      :book="book"
+      :hideBookmark="hideBookmarks"
+    />
   </ul>
 </template>

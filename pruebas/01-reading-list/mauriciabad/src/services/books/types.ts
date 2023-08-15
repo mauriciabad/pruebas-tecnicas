@@ -16,6 +16,27 @@ export interface Book {
   ISBN: BookISBN;
   author: Author;
 }
+
+export interface UnknownBook extends Book {
+  isUnknownBook: true;
+}
+
+export function makeUnknownBook(bookISBN: BookISBN = ''): UnknownBook {
+  return {
+    isUnknownBook: true,
+    title: `Unknown book '${bookISBN}'`,
+    pages: 0,
+    genre: 'Unknown',
+    cover: 'https://singlecolorimage.com/get/d6cfcc/9x14',
+    synopsis: 'Unknown',
+    year: 0,
+    ISBN: bookISBN,
+    author: {
+      name: 'Unknwon',
+    },
+  }
+}
+
 export interface Author {
   name: string;
   otherBooks?: string[];
