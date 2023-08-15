@@ -17,6 +17,8 @@
   "dependencies": {
     "@headlessui/vue": "^1.7.15",
     "@heroicons/vue": "^2.0.18",
+    "@tabler/icons-vue": "^2.30.0",
+    "@vueuse/core": "^10.3.0",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4"
   },

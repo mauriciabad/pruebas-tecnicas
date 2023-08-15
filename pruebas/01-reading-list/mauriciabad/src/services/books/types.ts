@@ -4,6 +4,8 @@ export interface Library {
   }[]
 }
 
+export type BookISBN = string;
+
 export interface Book {
   title: string;
   pages: number;
@@ -11,7 +13,7 @@ export interface Book {
   cover: string;
   synopsis: string;
   year: number;
-  ISBN: string;
+  ISBN: BookISBN;
   author: Author;
 }
 export interface Author {
